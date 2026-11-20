@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Tanaffus.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Tanaffus.Views"
+    FlowDirection="RightToLeft"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.BackgroundColor="{StaticResource TnfBackground}"
+    Shell.ForegroundColor="{StaticResource TnfPrimary}"
+    Shell.TitleColor="{StaticResource TnfPrimary}"
+    Shell.TabBarBackgroundColor="{StaticResource TnfSurface}"
+    Shell.TabBarForegroundColor="{StaticResource TnfPrimary}"
+    Shell.TabBarTitleColor="{StaticResource TnfPrimary}"
+    Shell.TabBarUnselectedColor="{StaticResource TnfTextMuted}">
+
+    <!-- Pages outside the tab bar. The first item is the start page. -->
+    <ShellContent Route="signin" ContentTemplate="{DataTemplate views:SignInPage}" />
+    <ShellContent Route="register" ContentTemplate="{DataTemplate views:CreateAccountPage}" />
+
+    <!-- Main app: four tabs. Absolute routes: //main/today, //main/log, //main/trends, //main/profile -->
+    <TabBar Route="main">
+        <ShellContent Title="اليوم" Icon="tab_today.svg" Route="today" ContentTemplate="{DataTemplate views:TodayPage}" />
+        <ShellContent Title="السجل" Icon="tab_log.svg" Route="log" ContentTemplate="{DataTemplate views:LogPage}" />
+        <ShellContent Title="الاتجاهات" Icon="tab_trends.svg" Route="trends" ContentTemplate="{DataTemplate views:TrendsPage}" />
+        <ShellContent Title="حسابي" Icon="tab_profile.svg" Route="profile" ContentTemplate="{DataTemplate views:ProfilePage}" />
+    </TabBar>
+</Shell>

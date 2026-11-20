@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Tanaffus.Views.SignInPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24,48,24,24" Spacing="12">
+            <Label Style="{StaticResource Heading}" Text="تنفـــس" FontSize="40" HorizontalOptions="Center" />
+            <Label Style="{StaticResource Muted}" Text="رفيقك الموثوق لصحتك التنفسية" HorizontalOptions="Center" />
+
+            <Label Style="{StaticResource Heading}" Text="تسجيل الدخول" Margin="0,24,0,0" />
+            <Label Style="{StaticResource Muted}" Text="مرحبًا بعودتك إلى مساحتك الآمنة" />
+
+            <Label Style="{StaticResource FieldLabel}" Text="البريد الإلكتروني" Margin="0,12,0,0" />
+            <Border Style="{StaticResource Field}">
+                <Entry Keyboard="Email" Placeholder="name@example.com" />
+            </Border>
+
+            <Label Style="{StaticResource FieldLabel}" Text="كلمة المرور" />
+            <Border Style="{StaticResource Field}">
+                <Entry IsPassword="True" Placeholder="••••••••" />
+            </Border>
+
+            <Button Style="{StaticResource PrimaryButton}" Text="تسجيل الدخول" Clicked="OnSignInClicked" Margin="0,8,0,0" />
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="6" Margin="0,24,0,0">
+                <Label Text="ليس لديك حساب؟" VerticalOptions="Center" />
+                <Label Style="{StaticResource LinkLabel}" Text="إنشاء حساب جديد" VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegisterTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

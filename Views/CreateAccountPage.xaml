@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Tanaffus.Views.CreateAccountPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24,40,24,24" Spacing="10">
+            <Label Style="{StaticResource Heading}" Text="إنشاء حساب جديد" />
+            <Label Style="{StaticResource Muted}" Text="مرحبًا بك في رفيقك لمتابعة الربو والتنفس الصحي" />
+
+            <Border Style="{StaticResource Card}" Margin="0,12,0,0">
+                <VerticalStackLayout Spacing="8">
+                    <Label Style="{StaticResource FieldLabel}" Text="بياناتك الأساسية" FontSize="16" />
+
+                    <Label Style="{StaticResource FieldLabel}" Text="الاسم الأول" />
+                    <Border Style="{StaticResource Field}" BackgroundColor="{StaticResource TnfBackground}"><Entry /></Border>
+
+                    <Label Style="{StaticResource FieldLabel}" Text="اسم العائلة" />
+                    <Border Style="{StaticResource Field}" BackgroundColor="{StaticResource TnfBackground}"><Entry /></Border>
+
+                    <Label Style="{StaticResource FieldLabel}" Text="العمر" />
+                    <Border Style="{StaticResource Field}" BackgroundColor="{StaticResource TnfBackground}"><Entry Keyboard="Numeric" /></Border>
+
+                    <Label Style="{StaticResource FieldLabel}" Text="الجنس" />
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                        <Button Style="{StaticResource SegButton}" Text="أنثى" BackgroundColor="{StaticResource TnfPrimary}" TextColor="White" />
+                        <Button Grid.Column="1" Style="{StaticResource SegButton}" Text="ذكر" />
+                    </Grid>
+
+                    <Label Style="{StaticResource FieldLabel}" Text="أفضل قراءة لذروة التدفق (L/min)" />
+                    <Border Style="{StaticResource Field}" BackgroundColor="{StaticResource TnfBackground}"><Entry Keyboard="Numeric" Text="500" /></Border>
+                    <Label Style="{StaticResource Muted}" Text="تستخدم لحساب مناطقك (الخضراء والصفراء والحمراء) بدقة." />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource Card}">
+                <VerticalStackLayout Spacing="8">
+                    <Label Style="{StaticResource FieldLabel}" Text="البيانات الطبية والتواصل في الطوارئ" FontSize="16" />
+
+                    <Label Style="{StaticResource FieldLabel}" Text="اسم الطبيب المعالج (اختياري)" />
+                    <Border Style="{StaticResource Field}" BackgroundColor="{StaticResource TnfBackground}"><Entry /></Border>
+
+                    <Label Style="{StaticResource FieldLabel}" Text="البريد الإلكتروني لولي الأمر أو الطوارئ (اختياري)" />
+                    <Border Style="{StaticResource Field}" BackgroundColor="{StaticResource TnfBackground}"><Entry Keyboard="Email" /></Border>
+
+                    <Label Style="{StaticResource FieldLabel}" Text="البريد الإلكتروني للحساب" />
+                    <Border Style="{StaticResource Field}" BackgroundColor="{StaticResource TnfBackground}"><Entry Keyboard="Email" /></Border>
+
+                    <Label Style="{StaticResource FieldLabel}" Text="كلمة المرور" />
+                    <Border Style="{StaticResource Field}" BackgroundColor="{StaticResource TnfBackground}"><Entry IsPassword="True" /></Border>
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Style="{StaticResource PrimaryButton}" Text="إنشاء الحساب والمتابعة" Clicked="OnCreateClicked" />
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="6">
+                <Label Text="لديك حساب بالفعل؟" VerticalOptions="Center" />
+                <Label Style="{StaticResource LinkLabel}" Text="تسجيل الدخول" VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSignInTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
